@@ -1,4 +1,4 @@
 export class Gender{
-    idgender:number=0
+    idGender:number=0
     nameGender:string=""
 }

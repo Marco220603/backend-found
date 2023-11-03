@@ -1,8 +1,8 @@
-<body>
     <mat-toolbar backgroundColor="#FF0000">
         <mat-icon>menu</mat-icon>   
         <button mat-button [matMenuTriggerFor]="menuArtista">Artistas</button>
         <button mat-button [matMenuTriggerFor]="menuCanciones">Canciones</button>
+        <button mat-button [matMenuTriggerFor]="menuGeneros">Generos</button>
     </mat-toolbar>
       
     <mat-menu #menuArtista="matMenu">
@@ -14,41 +14,10 @@
         <button mat-menu-item routerLink="/Artista/nuevo">Registrar</button>
         <button mat-menu-item routerLink="/Artista">Listar</button>
         <button mat-menu-item routerLink="/Artista/reporte">Buscar</button>
-    </mat-menu>  
-    <header>
-        <h1>Found Emotions</h1>
-        <p>¡Encuentra tu musica!</p>
-    </header>
-
-    <div class="container">
-        <h2>Playlist Destacada</h2>
-        <p>Descubre nuestra selección de canciones favoritas.</p>
-
-        <ul>
-            <li><a href="#">Canción 1</a></li>
-            <li><a href="#">Canción 2</a></li>
-            <li><a href="#">Canción 3</a></li>
-            <li><a href="#">Canción 4</a></li>
-            <li><a href="#">Canción 5</a></li>
-        </ul>
-
-        <h2>Artistas Destacados</h2>
-        <p>Conoce a los músicos que están dando de qué hablar.</p>
-
-        <ul>
-            <li><a href="#">Artista 1</a></li>
-            <li><a href="#">Artista 2</a></li>
-            <li><a href="#">Artista 3</a></li>
-            <li><a href="#">Artista 4</a></li>
-            <li><a href="#">Artista 5</a></li>
-        </ul>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Grupo1 - Trabajo ArquiWeb</p>
-        </div>
-    </footer>
-</body>
-    
+    </mat-menu> 
+    <mat-menu #menuGeneros="matMenu">
+        <button mat-menu-item routerLink="/genders/nuevo">Registrar</button>
+        <button mat-menu-item routerLink="/genders">Listar</button>
+        <button mat-menu-item routerLink="/genders/reporte">Buscar</button>
+    </mat-menu>      
 <router-outlet></router-outlet>

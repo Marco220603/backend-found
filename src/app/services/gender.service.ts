@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Gender } from '../model/gender'; 
 import { HttpClient } from '@angular/common/http';
 const base_url = environment.base;
@@ -23,5 +23,18 @@ export class GenderService {
   }
   getList() {
     return this.listaCambio.asObservable();
+  }
+  listId(id: number) {
+    return this.http.get<Gender>(`${this.url}/${id}`);
+  }
+  update(c:Gender) { 
+    return this.http.put(this.url, c);
+  }
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+ 
+  buscar(nombre: string): Observable<Gender[]> {
+    return this.http.post<Gender[]>(`${this.url}/buscar`, { nombre: nombre });
   }
 }

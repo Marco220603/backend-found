@@ -27,6 +27,7 @@ import { CreaeditaPlaylistComponent } from './component/playlist/creaedita-playl
 import { SongComponent } from './component/song/song.component';
 import { CreaeditaSongComponent } from './component/song/creaedita-song/creaedita-song.component';
 import { ListarSongComponent } from './component/song/listar-song/listar-song.component';
+import { ReporteGenderComponent } from './component/gender/reporte-gender/reporte-gender.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ListarSongComponent } from './component/song/listar-song/listar-song.co
     CreaeditaPlaylistComponent,
     SongComponent,
     CreaeditaSongComponent,
-    ListarSongComponent
+    ListarSongComponent,
+    ReporteGenderComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./gender.component.css']
 })
 export class GenderComponent {
-  constructor(public route: ActivatedRoute) {
-
-  }
+  constructor(public route: ActivatedRoute) {}
+  ngOnInit(): void{}
 }
