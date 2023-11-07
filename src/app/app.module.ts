@@ -28,6 +28,11 @@ import { SongComponent } from './component/song/song.component';
 import { CreaeditaSongComponent } from './component/song/creaedita-song/creaedita-song.component';
 import { ListarSongComponent } from './component/song/listar-song/listar-song.component';
 import { ReporteGenderComponent } from './component/gender/reporte-gender/reporte-gender.component';
+import { ArtistReporteComponent } from './component/artist/artist-reporte/artist-reporte.component';
+import { TemperComponent } from './component/temper/temper.component';
+import { CreaeditaTemperComponent } from './component/temper/creaedita-temper/creaedita-temper.component';
+import { ListarTemperComponent } from './component/temper/listar-temper/listar-temper.component';
+import { ReporteTemperComponent } from './component/temper/reporte-temper/reporte-temper.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { ReporteGenderComponent } from './component/gender/reporte-gender/report
     SongComponent,
     CreaeditaSongComponent,
     ListarSongComponent,
-    ReporteGenderComponent
+    ReporteGenderComponent,
+    ArtistReporteComponent,
+    TemperComponent,
+    CreaeditaTemperComponent,
+    ListarTemperComponent,
+    ReporteTemperComponent
   ],
   imports: [
     BrowserModule,
