@@ -2,7 +2,7 @@
 
         <button mat-button [matMenuTriggerFor]="menuArtista">Artistas</button>
         <button mat-button [matMenuTriggerFor]="menuCanciones">Canciones</button>
-        <button mat-button [matMenuTriggerFor]="menuGeneros">Generos</button>
+        <button mat-button [matMenuTriggerFor]="menuGeneros" *ngIf="validarRol()">Generos</button>
         <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 
     </mat-toolbar>
@@ -20,7 +20,6 @@
     <mat-menu #menuGeneros="matMenu">
         <button mat-menu-item routerLink="components/genders/nuevo" *ngIf="role == 'ADMIN'">Registrar Genero</button>
         <button mat-menu-item routerLink="components/genders">Listar</button>
-        <button mat-menu-item routerLink="components/genders/reporte">Buscar</button>
     </mat-menu>
     
     <mat-menu #menuSalir="matMenu">

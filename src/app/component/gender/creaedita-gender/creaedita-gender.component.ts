@@ -31,7 +31,7 @@ export class CreaeditaGenderComponent implements OnInit{
       });
       this.form = this.formBuilder.group({
         idGender:['',],
-        nameGender:['',Validators.required]
+        nameGender:['',Validators.required],
       });
   }
 
@@ -70,7 +70,7 @@ export class CreaeditaGenderComponent implements OnInit{
       this.gS.listId(this.id).subscribe((data)=>{
         this.form = new FormGroup({
           idGender: new FormControl(data.idGender),
-          nameGender: new FormControl(data.nameGender)
+          nameGender: new FormControl(data.nameGender),
         });
       });
     }

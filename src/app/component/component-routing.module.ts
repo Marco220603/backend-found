@@ -7,11 +7,12 @@ import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes =[
     {
-        path: 'genders',component:GenderComponent,children:[
+        path: 'genders',
+        component:GenderComponent,
+        children:[
             {path:'nuevo',component:CreaeditaGenderComponent},
             {path:'ediciones/:id',component:CreaeditaGenderComponent},
-            {path:'reporte',component:ReporteGenderComponent}
-          ]
+          ],
     },
     {
         path:'inicio',component:InicioComponent
