@@ -15,46 +15,13 @@ import{MatNativeDateModule} from '@angular/material/core'
 import {MatPaginatorModule} from '@angular/material/paginator'
 import { MatMenuModule } from '@angular/material/menu';
 import{MatIconModule} from '@angular/material/icon';
-import { ArtistComponent } from './component/artist/artist.component';
-import { PlaylistComponent } from './component/playlist/playlist.component';
-import { GenderComponent } from './component/gender/gender.component';
-import { ListarArtistComponent } from './component/artist/listar-artist/listar-artist.component';
-import { ListarGenderComponent } from './component/gender/listar-gender/listar-gender.component';
-import { ListarPlaylistComponent } from './component/playlist/listar-playlist/listar-playlist.component';
-import { CreaeditaArtistComponent } from './component/artist/creaedita-artist/creaedita-artist.component';
-import { CreaeditaGenderComponent } from './component/gender/creaedita-gender/creaedita-gender.component';
-import { CreaeditaPlaylistComponent } from './component/playlist/creaedita-playlist/creaedita-playlist.component';
-import { SongComponent } from './component/song/song.component';
-import { CreaeditaSongComponent } from './component/song/creaedita-song/creaedita-song.component';
-import { ListarSongComponent } from './component/song/listar-song/listar-song.component';
-import { ReporteGenderComponent } from './component/gender/reporte-gender/reporte-gender.component';
-import { ArtistReporteComponent } from './component/artist/artist-reporte/artist-reporte.component';
-import { TemperComponent } from './component/temper/temper.component';
-import { CreaeditaTemperComponent } from './component/temper/creaedita-temper/creaedita-temper.component';
-import { ListarTemperComponent } from './component/temper/listar-temper/listar-temper.component';
-import { ReporteTemperComponent } from './component/temper/reporte-temper/reporte-temper.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArtistComponent,
-    PlaylistComponent,
-    GenderComponent,
-    ListarArtistComponent,
-    ListarGenderComponent,
-    ListarPlaylistComponent,
-    CreaeditaArtistComponent,
-    CreaeditaGenderComponent,
-    CreaeditaPlaylistComponent,
-    SongComponent,
-    CreaeditaSongComponent,
-    ListarSongComponent,
-    ReporteGenderComponent,
-    ArtistReporteComponent,
-    TemperComponent,
-    CreaeditaTemperComponent,
-    ListarTemperComponent,
-    ReporteTemperComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +37,7 @@ import { ReporteTemperComponent } from './component/temper/reporte-temper/report
     MatButtonModule,
     MatTableModule,
     MatNativeDateModule,
+    MatSnackBarModule,
     MatPaginatorModule,
     MatMenuModule,
     MatToolbarModule,
