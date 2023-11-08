@@ -10,7 +10,8 @@
         <br />
         <h2 style="text-align: center;">Lista de Generos</h2>
         <div style="text-align: right;">
-            <button mat-raised-button color="primary" routerLink="/genders/nuevo">Nuevo</button>
+            <button *ngIf="role=='USER'"
+             mat-raised-button color="primary" routerLink="/components/genders/nuevo">Nuevo</button>
         </div>
         <mat-form-field>
             <input matInput (keyup)=filter($event) placeholder="buscar"/>

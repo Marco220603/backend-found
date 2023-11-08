@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GenderComponent } from './gender/gender.component';
 import { CreaeditaGenderComponent } from './gender/creaedita-gender/creaedita-gender.component';
 import { ReporteGenderComponent } from './gender/reporte-gender/reporte-gender.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes =[
     {
@@ -11,7 +12,11 @@ const routes: Routes =[
             {path:'ediciones/:id',component:CreaeditaGenderComponent},
             {path:'reporte',component:ReporteGenderComponent}
           ]
+    },
+    {
+        path:'inicio',component:InicioComponent
     }
+
 ];
 
 @NgModule({

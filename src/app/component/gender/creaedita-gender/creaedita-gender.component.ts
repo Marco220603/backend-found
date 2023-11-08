@@ -53,7 +53,7 @@ export class CreaeditaGenderComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['genders'])
+      this.router.navigate(['components/genders'])
       }else{
         this.mensaje='revise los campos'
       }

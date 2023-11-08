@@ -30,6 +30,7 @@ import { TemperComponent } from './temper/temper.component';
 import { CreaeditaTemperComponent } from './temper/creaedita-temper/creaedita-temper.component';
 import { ListarTemperComponent } from './temper/listar-temper/listar-temper.component';
 import { ReporteTemperComponent } from './temper/reporte-temper/reporte-temper.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ReporteTemperComponent } from './temper/reporte-temper/reporte-temper.c
     CreaeditaTemperComponent,
     ListarTemperComponent,
     ReporteTemperComponent,
+    InicioComponent,
   ],
   imports: [
     CommonModule,
