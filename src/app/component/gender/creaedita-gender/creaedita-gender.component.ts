@@ -49,7 +49,7 @@ export class CreaeditaGenderComponent implements OnInit{
       }else{
         this.gS.insert(this.gender).subscribe((data)=>{
           this.gS.list().subscribe((data) =>{
-            this.gS.setList(data)
+            this.gS.setList(data);
           });
         });
       }
