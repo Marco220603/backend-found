@@ -1,1 +1,44 @@
-<p>creaedita-artist works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <h2>Registro de Genero</h2>
+        <form [formGroup]="form" (submit)="registrar()" class="example-form">
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>idGender</mat-label>
+                <input matInput placeholder="Id" formControlName="idartist"/>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Genero</mat-label>
+                <input matInput placeholder="Nombre" formControlName="nameartist" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('nameartist')?.errors?.['required']"
+                >
+                Nombre del Artista es obligatorio
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Genero</mat-label>
+                <input matInput placeholder="Genero" formControlName="genderid" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('genderid')?.errors?.['required']"
+                >
+                El Genero es obligatorio
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/components/artist">Cancelar</button>
+            <p>{{ mensaje }}</p>
+        </form>
+    </div>
+</body>
+</html>
+
