@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-artist',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./artist.component.css']
 })
 export class ArtistComponent {
-
+  constructor(public route: ActivatedRoute) {}
+  ngOnInit(): void{}
 }
