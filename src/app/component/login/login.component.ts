@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from 'src/app/services/login.service';
 import { JwtRequest } from 'src/app/model/jwtRequest';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -30,5 +29,6 @@ export class LoginComponent implements OnInit{
       this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
     });
   }
-
 }
+
+

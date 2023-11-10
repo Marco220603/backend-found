@@ -31,7 +31,6 @@ import { CreaeditaTemperComponent } from './temper/creaedita-temper/creaedita-te
 import { ListarTemperComponent } from './temper/listar-temper/listar-temper.component';
 import { ReporteTemperComponent } from './temper/reporte-temper/reporte-temper.component';
 import { InicioComponent } from './inicio/inicio.component';
-
 @NgModule({
   declarations: [
     GenderComponent,
