@@ -12,6 +12,7 @@ const base_url = environment.base
 
 export class TemperService {
   private url = `${base_url}/temper`
+  private listaCambio = new Subject<Temper[]>();
   constructor(private http:HttpClient) { }
   insert(t: Temper) {
     return this.http.post(this.url, t);
@@ -21,5 +22,11 @@ export class TemperService {
   }
   delete(id: number) {
     return this.http.delete(`${this.url}/${id}`);
+  }
+  setList(listaNueva: Temper[]) {
+    this.listaCambio.next(listaNueva);
+  }
+  getList() {
+    return this.listaCambio.asObservable();
   }
 }
