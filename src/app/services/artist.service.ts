@@ -9,6 +9,7 @@ const base_url=environment.base
 @Injectable({
   providedIn: 'root'
 })
+// H
 export class ArtistService {
 
   private url = `${base_url}/artistas`
