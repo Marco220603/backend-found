@@ -18,6 +18,7 @@ import{MatIconModule} from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './component/login/login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import { LoginComponent } from './component/login/login.component';
     MatPaginatorModule,
     MatMenuModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
