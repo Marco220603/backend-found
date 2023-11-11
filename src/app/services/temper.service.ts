@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 import { Temper } from '../model/temper';
@@ -14,6 +14,16 @@ export class TemperService {
   private url = `${base_url}/temper`
   private listaCambio = new Subject<Temper[]>();
   constructor(private http:HttpClient) { }
+
+  list() {
+    let token = sessionStorage.getItem('token');
+    return this.http.get<Temper[]>(this.url, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+
   insert(t: Temper) {
     return this.http.post(this.url, t);
   }

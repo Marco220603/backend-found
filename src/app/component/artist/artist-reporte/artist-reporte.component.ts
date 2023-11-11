@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { Artist } from 'src/app/model/artist';
 import { Gender } from 'src/app/model/gender';
 import { ArtistService } from 'src/app/services/artist.service';
 
@@ -10,7 +11,7 @@ import { ArtistService } from 'src/app/services/artist.service';
   styleUrls: ['./artist-reporte.component.css']
 })
 export class ArtistReporteComponent implements OnInit {
-  dataSource:MatTableDataSource<Gender> = new MatTableDataSource<Gender>();
+  dataSource:MatTableDataSource<Artist> = new MatTableDataSource<Artist>();
   fechaForm : FormGroup = new FormGroup({});
   mensaje: string= '';
   fechaVacia:boolean = false;

@@ -1,11 +1,15 @@
     <mat-toolbar backgroundColor="#FF0000" *ngIf="verificar()">
-
+        <button mat-button [matMenuTriggerFor]="menuInicio">Inicio</button>
         <button mat-button [matMenuTriggerFor]="menuArtista">Artistas</button>
         <button mat-button [matMenuTriggerFor]="menuCanciones">Canciones</button>
         <button mat-button [matMenuTriggerFor]="menuGeneros" *ngIf="validarRol()">Generos</button>
         <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 
     </mat-toolbar>
+
+    <mat-menu #menuInicio="matMenu">
+      <button mat-menu-item routerLink="components/inicio">Inicio</button>
+    </mat-menu>
       
     <mat-menu #menuArtista="matMenu">
         <button mat-menu-item routerLink="/Artista/nuevo">Registrar</button>
