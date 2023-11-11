@@ -40,14 +40,14 @@
           </mat-option>
         </mat-select>
         <mat-error
-        *ngIf="obtenerControlCampo('gender')?.errors?.['required']"
+        *ngIf="obtenerControlCampo('genders')?.errors?.['required']"
       >
         El  Genero es obligatorio.
       </mat-error>
       </mat-form-field>
       <br />
       <button mat-raised-button color="primary">Aceptar</button>
-      <button mat-raised-button color="warn" routerLink="/components/socios">
+      <button mat-raised-button color="warn" routerLink="/components/tempers">
         Cancelar
       </button>
       <p>{{ mensaje }}</p>

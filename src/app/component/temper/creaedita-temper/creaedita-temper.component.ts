@@ -45,7 +45,7 @@ export class CreaeditaTemperComponent implements OnInit{
           this.tS.setList(data);
         })
       })
-      this.router.navigate(['/components/temper'])
+      this.router.navigate(['/components/tempers'])
     } else {
       this.mensaje = "Ingrese todos los campos!!!"
     }
