@@ -15,6 +15,7 @@ export class ListarTemperComponent{
     'nombre',
     'descripcion',
     'genero',
+    'minScore',
   ]
   constructor(private tS: TemperService) {
 

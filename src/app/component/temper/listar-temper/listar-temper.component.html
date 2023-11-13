@@ -22,11 +22,11 @@
             <!-- Name Column -->
             <ng-container matColumnDef="nombre">
               <th mat-header-cell *matHeaderCellDef> Temper </th>
-              <td mat-cell *matCellDef="let element"> {{element.nametempe}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.nametemper}} </td>
             </ng-container>
           
             <!-- Weight Column -->
-            <ng-container matColumnDef="dni">
+            <ng-container matColumnDef="descripcion">
               <th mat-header-cell *matHeaderCellDef> Descripcion </th>
               <td mat-cell *matCellDef="let element"> {{element.descripciontemper}} </td>
             </ng-container>
@@ -34,7 +34,11 @@
               <!-- Symbol Column -->
             <ng-container matColumnDef="genero">
                 <th mat-header-cell *matHeaderCellDef> Genero </th>
-                <td mat-cell *matCellDef="let element"> {{element.gender.nameGender}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.genero.idGender}} </td>
+              </ng-container>
+              <ng-container matColumnDef="minScore">
+                <th mat-header-cell *matHeaderCellDef> minScore </th>
+                <td mat-cell *matCellDef="let element"> {{element.minScore}} </td>
               </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

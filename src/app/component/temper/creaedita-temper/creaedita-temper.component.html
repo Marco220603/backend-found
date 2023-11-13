@@ -13,16 +13,6 @@
     <form [formGroup]="form" (submit)="registrar()" class="example-form">
 
       <mat-form-field class="example-full-width">
-        <mat-label>Temperamento</mat-label>
-        <input matInput placeholder="Temperamento" formControlName="nombre" />
-        <mat-error
-        *ngIf="obtenerControlCampo('nombre')?.errors?.['required']"
-      >
-        El nombre del temperamento es obligatorio.
-      </mat-error>
-      </mat-form-field>
-      <br />
-      <mat-form-field class="example-full-width">
         <mat-label>Descripcion</mat-label>
         <input matInput placeholder="Descripcion" formControlName="descripcion" />
         <mat-error
@@ -32,20 +22,41 @@
       </mat-error>
       </mat-form-field>
       <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Puntuacion</mat-label>
+        <input matInput placeholder="Puntuacion" formControlName="minScore" />
+        <mat-error
+        *ngIf="obtenerControlCampo('minScore')?.errors?.['required']"
+      >
+        La Puntuacion del temperamento es obligatorio.
+      </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Temperamento</mat-label>
+        <input matInput placeholder="Temperamento" formControlName="nombre" />
+        <mat-error
+        *ngIf="obtenerControlCampo('nombre')?.errors?.['required']"
+      >
+        El nombre del temperamento es obligatorio.
+      </mat-error>
+      </mat-form-field>
+      <br />
       <mat-form-field>
         <mat-label>Genero</mat-label>
-        <mat-select formControlName="Genero">
-          <mat-option *ngFor="let g of listaGeneros" [value]="g.idGender">
+        <mat-select formControlName="genero">
+          <mat-option *ngFor="let g of listaGenders" [value]="g.idGender">
             {{g.nameGender}}
           </mat-option>
         </mat-select>
         <mat-error
-        *ngIf="obtenerControlCampo('genders')?.errors?.['required']"
+        *ngIf="obtenerControlCampo('genero')?.errors?.['required']"
       >
         El  Genero es obligatorio.
       </mat-error>
       </mat-form-field>
       <br />
+      
       <button mat-raised-button color="primary">Aceptar</button>
       <button mat-raised-button color="warn" routerLink="/components/tempers">
         Cancelar

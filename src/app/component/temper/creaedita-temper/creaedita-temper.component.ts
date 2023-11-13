@@ -14,8 +14,9 @@ import { GenderService } from 'src/app/services/gender.service';
 export class CreaeditaTemperComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   temper:Temper = new Temper();
-  descripciontemper:string=""
-  listaGeneros: Gender[] = []
+  descriptiontemper:string=""
+  minScore:number=0
+  listaGenders: Gender[] = []
   mensaje: string='';  
 
   constructor(
@@ -30,16 +31,19 @@ export class CreaeditaTemperComponent implements OnInit{
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
       genero: ['', Validators.required],
+      minScore: ['', Validators.required],
     });
     this.gS.list().subscribe(data => {
-      this.listaGeneros = data
+      this.listaGenders = data
     })
   }
   registrar() {
     if (this.form.valid) {
+      this.temper.descriptiontemper = this.form.value.descripcion;
+      console.log(this.temper.descriptiontemper)
+      this.temper.minScore = this.form.value.minScore;
       this.temper.nametemper = this.form.value.nombre;
-      this.temper.descripciontemper = this.form.value.descripcion;
-      this.temper.genderid.idGender = this.form.value.genero;
+      this.temper.Gender.idGender = this.form.value.genero;
       this.tS.insert(this.temper).subscribe(data => {
         this.tS.list().subscribe(data => {
           this.tS.setList(data);
