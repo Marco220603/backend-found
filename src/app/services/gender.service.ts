@@ -8,7 +8,7 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class GenderService {
-  private url = `${base_url}/genders`;
+  private url = `${base_url}/generos`;
   private listaCambio = new Subject<Gender[]>();
 
   constructor(private http: HttpClient) {}

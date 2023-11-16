@@ -11,7 +11,7 @@ const base_url = environment.base
 })
 
 export class TemperService {
-  private url = `${base_url}/temper`
+  private url = `${base_url}/temperamentos`
   private listaCambio = new Subject<Temper[]>();
   constructor(private http:HttpClient) { }
 

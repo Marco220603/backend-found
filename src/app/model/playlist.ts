@@ -1,5 +1,4 @@
  export class Playlist{
-  
      idplaylist:number=0 
      nameplaylist:string=""
      descriptionplaylist:string=""
