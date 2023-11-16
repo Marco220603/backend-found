@@ -17,10 +17,14 @@ export class CreaeditaArtistComponent implements OnInit{
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
-  ListaGeneros: Gender[]=[]
+  listaGenders: Gender[]=[]
 
-constructor(private aS:ArtistService,private router:Router,private formBuilder: FormBuilder,
-  private route:ActivatedRoute,private gS:GenderService){}
+constructor(
+  private aS:ArtistService,
+  private router:Router,
+  private formBuilder: FormBuilder,
+  private route:ActivatedRoute,
+  private gS:GenderService){}
 
 ngOnInit(): void {
   this.route.params.subscribe((data:Params)=> {
@@ -31,10 +35,10 @@ ngOnInit(): void {
   this.form = this.formBuilder.group({
     idartist:['',],
     nameartist:['', Validators.required],
-    genderid:['', Validators.required]
+    gender:['', Validators.required]
   });
   this.gS.list().subscribe(data=>{
-    this.ListaGeneros = data;
+    this.listaGenders = data;
   })
 }
 
@@ -42,7 +46,7 @@ registrar(){
   if(this.form.valid){
     this.artist.idartist=this.form.value.idartist;
     this.artist.nameartist = this.form.value.nameartist;
-    this.artist.genderid = this.form.value.genderid
+    this.artist.gender.idGender = this.form.value.gender
 
     if(this.edicion){
       this.aS.update(this.artist).subscribe(()=>{
@@ -69,7 +73,7 @@ init(){
       this.form = new FormGroup({
         idartist: new FormControl(data.idartist),
         nameartist: new FormControl(data.nameartist),
-        genderid: new FormControl(data.genderid)
+        gender: new FormControl(data.gender.idGender)
       });
       });
     }

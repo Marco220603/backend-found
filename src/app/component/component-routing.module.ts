@@ -5,6 +5,8 @@ import { CreaeditaGenderComponent } from './gender/creaedita-gender/creaedita-ge
 import { InicioComponent } from './inicio/inicio.component';
 import { TemperComponent } from './temper/temper.component';
 import { CreaeditaTemperComponent } from './temper/creaedita-temper/creaedita-temper.component';
+import { ArtistComponent } from './artist/artist.component';
+import { CreaeditaArtistComponent } from './artist/creaedita-artist/creaedita-artist.component';
 
 
 const routes: Routes =[
@@ -17,13 +19,21 @@ const routes: Routes =[
           ],
     },
     {
-    path: 'tempers',
+        path: 'tempers',
         component:TemperComponent,
         children:[
             {path:'nuevo',component:CreaeditaTemperComponent},
             {path:'ediciones/:id',component:CreaeditaTemperComponent},
         ],
     },
+    {
+        path: 'artist',
+        component:ArtistComponent,
+        children:[
+            {path:'nuevo',component:CreaeditaArtistComponent},
+            {path:'ediciones/:id',component:CreaeditaArtistComponent},
+            ],
+        },
     {
         path:'inicio',component:InicioComponent
     }

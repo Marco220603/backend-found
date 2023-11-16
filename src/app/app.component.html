@@ -13,13 +13,13 @@
     </mat-menu>
       
     <mat-menu #menuArtista="matMenu">
-        <button mat-menu-item routerLink="/Artista/nuevo">Registrar</button>
-        <button mat-menu-item routerLink="/Artista">Listar</button>
+        <button mat-menu-item routerLink="components/artist/nuevo" *ngIf="role == 'ADMIN'">Registrar Artista</button>
+        <button mat-menu-item routerLink="components/artist">Listar</button>
         <button mat-menu-item routerLink="/Artista/reporte">Buscar</button>
     </mat-menu>  
     <mat-menu #menuCanciones="matMenu">
-        <button mat-menu-item routerLink="/Artista/nuevo">Registrar</button>
-        <button mat-menu-item routerLink="/Artista">Listar</button>
+        <button mat-menu-item routerLink="components/artist/nuevo" *ngIf="role == 'ADMIN'">Registrar Canciones</button>
+        <button mat-menu-item routerLink="components/artist">Listar</button>
         <button mat-menu-item routerLink="/Artista/reporte">Buscar</button>
     </mat-menu>
     <mat-menu #menuGeneros="matMenu">
