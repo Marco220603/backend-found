@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Playlistinuser } from 'src/app/model/playlistinuser';
@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './listar-playlistinuser.component.html',
   styleUrls: ['./listar-playlistinuser.component.css']
 })
-export class ListarPlaylistinuserComponent {
+export class ListarPlaylistinuserComponent implements OnInit{
   
   dataSource: MatTableDataSource<Playlistinuser>= new MatTableDataSource();
   displayedColumns: string[] = ['codigo', 'playlist','descripcion','accion01','accion02'];

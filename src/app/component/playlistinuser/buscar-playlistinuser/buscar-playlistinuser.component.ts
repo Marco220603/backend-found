@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Playlistinuser } from 'src/app/model/playlistinuser';
@@ -9,7 +9,7 @@ import { PlaylistinuserService } from 'src/app/services/playlistinuser.service';
   templateUrl: './buscar-playlistinuser.component.html',
   styleUrls: ['./buscar-playlistinuser.component.css']
 })
-export class BuscarPlaylistinuserComponent {
+export class BuscarPlaylistinuserComponent implements OnInit{
   dataSource:MatTableDataSource<Playlistinuser> = new MatTableDataSource<Playlistinuser>();
   fechaForm : FormGroup = new FormGroup({});
   mensaje: string= '';
