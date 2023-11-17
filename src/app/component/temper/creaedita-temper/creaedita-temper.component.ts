@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Temper } from 'src/app/model/temper';
-import { TemperService } from 'src/app/services/temper.service';
-import { Router } from '@angular/router';
-import { Gender } from 'src/app/model/gender';
-import { GenderService } from 'src/app/services/gender.service';
+import { Component, OnInit } from "@angular/core";
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute, Params, Router } from "@angular/router";
+import { Gender } from "src/app/model/gender";
+import { Temper } from "src/app/model/temper";
+import { TemperService } from "src/app/services/temper.service";
+
 
 @Component({
   selector: 'app-creaedita-temper',
@@ -14,51 +14,79 @@ import { GenderService } from 'src/app/services/gender.service';
 export class CreaeditaTemperComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   temper:Temper = new Temper();
-  descriptiontemper:string=""
-  minScore:number=0
-  listaGenders: Gender[] = []
-  mensaje: string='';  
+  description:string="";
+  ListaGeneros:Gender[]=[];
+  minScore:number=0;
+  mensaje: string='';
+  id:number=0;
+  edicion:boolean=false;
 
   constructor(
     private tS:TemperService,
-    private gS:GenderService,
     private router:Router,
     private formBuilder:FormBuilder,
+    private route:ActivatedRoute
   ){}
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      nombre: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      genero: ['', Validators.required],
-      minScore: ['', Validators.required],
-    });
-    this.gS.list().subscribe(data => {
-      this.listaGenders = data
-    })
+      this.route.params.subscribe((data: Params)=>{
+        this.id = data['id'];
+        this.edicion = data['id'] != null
+        this.init();
+      });
+      this.form = this.formBuilder.group({
+        idTemper:['',],
+        nameTemper:['',Validators.required],
+        descriptionTemper:['',Validators.required],
+        Gender:['',Validators.required],
+        minScore:['',Validators.required],
+      });
   }
-  registrar() {
-    if (this.form.valid) {
-      this.temper.descriptiontemper = this.form.value.descripcion;
-      console.log(this.temper.descriptiontemper)
-      this.temper.minScore = this.form.value.minScore;
-      this.temper.nametemper = this.form.value.nombre;
-      this.temper.Gender.idGender = this.form.value.genero;
-      this.tS.insert(this.temper).subscribe(data => {
-        this.tS.list().subscribe(data => {
-          this.tS.setList(data);
+
+  registrar(){
+    if(this.form.valid){
+      this.temper.idTemper=this.form.value.idTemper;
+      this.temper.nameTemper=this.form.value.nameTemper;
+      this.temper.descriptionTemper=this.form.value.descriptionTemper;
+      this.temper.minScore=this.form.value.minScore;
+      this.temper.Gender.idGender=this.form.value.gender;
+
+      if(this.edicion){
+        this.tS.update(this.temper).subscribe(()=>{
+          this.tS.list().subscribe(data=>{
+            this.tS.setList(data);
+          })
         })
-      })
-      this.router.navigate(['/components/tempers'])
-    } else {
-      this.mensaje = "Ingrese todos los campos!!!"
-    }
+      }else{
+        this.tS.insert(this.temper).subscribe((data)=>{
+          this.tS.list().subscribe((data) =>{
+            this.tS.setList(data);
+          });
+        });
+      }
+      this.router.navigate(['components/tempers'])
+      }else{
+        this.mensaje='revise los campos'
+      }
   }
-  obtenerControlCampo(nombreCampo: string): AbstractControl {
+  obtenerControlCampo(nombreCampo:string):AbstractControl{
     const control = this.form.get(nombreCampo);
-    if (!control) {
+    if(!control){
       throw new Error(`Control no encontrado para el campo ${nombreCampo}`);
     }
-    return control;
+    return control
+  }
+  init(){
+    if(this.edicion){
+      this.tS.listId(this.id).subscribe((data)=>{
+        this.form = new FormGroup({
+          idTemper: new FormControl(data.idTemper),
+          nameTemper:new FormControl(data.nameTemper),
+          descriptionTemper:new FormControl(data.descriptionTemper),
+          minScore:new FormControl(data.minScore),
+          idGender:new FormControl(data.Gender.idGender),
+        });
+      });
+    }
   }
 }

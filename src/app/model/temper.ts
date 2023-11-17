@@ -1,8 +1,8 @@
 import { Gender } from "./gender"
 export class Temper {
-  idtemper:number=0 
-  nametemper:string=""
-  descriptiontemper:string=""
+  idTemper:number=0 
+  nameTemper:string=""
+  descriptionTemper:string=""
   Gender = new Gender()
   minScore:number=0
 }   
