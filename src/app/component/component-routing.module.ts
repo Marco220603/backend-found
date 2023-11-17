@@ -7,7 +7,8 @@ import { TemperComponent } from './temper/temper.component';
 import { CreaeditaTemperComponent } from './temper/creaedita-temper/creaedita-temper.component';
 import { ArtistComponent } from './artist/artist.component';
 import { CreaeditaArtistComponent } from './artist/creaedita-artist/creaedita-artist.component';
-
+import { PlaylistinuserComponent } from './playlistinuser/playlistinuser.component';
+import { CreaeditaPlaylistinuserComponent } from './playlistinuser/creaedita-playlistinuser/creaedita-playlistinuser.component';
 
 const routes: Routes =[
     {
@@ -34,6 +35,14 @@ const routes: Routes =[
             {path:'ediciones/:id',component:CreaeditaArtistComponent},
             ],
         },
+    {
+        path: 'playlistinusers',
+        component:PlaylistinuserComponent,
+        children:[
+            {path:'nuevo',component:CreaeditaPlaylistinuserComponent},
+            {path:'ediciones/:id',component:CreaeditaPlaylistinuserComponent},
+          ],
+    },
     {
         path:'inicio',component:InicioComponent
     }

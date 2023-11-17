@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <h2>Registro de Playlist de Usuario</h2>
+        <form [formGroup]="form" (submit)="registrar()" class="example-form">
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>idPlaylistinuser</mat-label>
+                <input matInput placeholder="Id" formControlName="idPlaylistinuser"/>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Playlist de Usuario</mat-label>
+                <input matInput placeholder="Nombre de Playlist" formControlName="namePlaylistinuser" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('namePlaylistinuser')?.errors?.['required']"
+                >
+                Nombre de la Playlist de Usuario es obligatorio
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Descripcion de la Playlist de Usuario</mat-label>
+                <input matInput placeholder="Descripcion de la Playlist" formControlName="descriptionPlaylistinuser" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('descriptionPlaylistinuser')?.errors?.['required']"
+                >
+                La descripcion de la Playlist de Usuario es obligatorio
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Id de Usuario</mat-label>
+                <input matInput placeholder="Id de Usuario" formControlName="idUser" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('idUser')?.errors?.['required']"
+                >
+                El id de Usuario es obligatorio
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/components/playlistinusers">Cancelar</button>
+            <p>{{ mensaje }}</p>
+        </form>
+    </div>
+</body>
+</html>

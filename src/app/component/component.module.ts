@@ -14,13 +14,10 @@ import { MatInputModule } from '@angular/material/input';
 import { GenderComponent } from './gender/gender.component';
 import { ComponentRoutingModule } from './component-routing.module';
 import { ArtistComponent } from './artist/artist.component';
-import { PlaylistComponent } from './playlist/playlist.component';
 import { ListarArtistComponent } from './artist/listar-artist/listar-artist.component';
 import { ListarGenderComponent } from './gender/listar-gender/listar-gender.component';
-import { ListarPlaylistComponent } from './playlist/listar-playlist/listar-playlist.component';
 import { CreaeditaArtistComponent } from './artist/creaedita-artist/creaedita-artist.component';
 import { CreaeditaGenderComponent } from './gender/creaedita-gender/creaedita-gender.component';
-import { CreaeditaPlaylistComponent } from './playlist/creaedita-playlist/creaedita-playlist.component';
 import { SongComponent } from './song/song.component';
 import { CreaeditaSongComponent } from './song/creaedita-song/creaedita-song.component';
 import { ListarSongComponent } from './song/listar-song/listar-song.component';
@@ -30,17 +27,18 @@ import { TemperComponent } from './temper/temper.component';
 import { CreaeditaTemperComponent } from './temper/creaedita-temper/creaedita-temper.component';
 import { ListarTemperComponent } from './temper/listar-temper/listar-temper.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { PlaylistinuserComponent } from './playlistinuser/playlistinuser.component';
+import { CreaeditaPlaylistinuserComponent } from './playlistinuser/creaedita-playlistinuser/creaedita-playlistinuser.component';
+import { ListarPlaylistinuserComponent } from './playlistinuser/listar-playlistinuser/listar-playlistinuser.component';
+import { BuscarPlaylistinuserComponent } from './playlistinuser/buscar-playlistinuser/buscar-playlistinuser.component';
 @NgModule({
   declarations: [
     GenderComponent,
     ArtistComponent,
-    PlaylistComponent,
     ListarArtistComponent,
     ListarGenderComponent,
-    ListarPlaylistComponent,
     CreaeditaArtistComponent,
     CreaeditaGenderComponent,
-    CreaeditaPlaylistComponent,
     SongComponent,
     CreaeditaSongComponent,
     ListarSongComponent,
@@ -49,7 +47,11 @@ import { InicioComponent } from './inicio/inicio.component';
     TemperComponent,
     CreaeditaTemperComponent,
     ListarTemperComponent,
-    InicioComponent
+    InicioComponent,
+    PlaylistinuserComponent,
+    CreaeditaPlaylistinuserComponent,
+    ListarPlaylistinuserComponent,
+    BuscarPlaylistinuserComponent
   ],
   imports: [
     CommonModule,
