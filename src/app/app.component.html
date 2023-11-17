@@ -4,6 +4,7 @@
         <button mat-button [matMenuTriggerFor]="menuCanciones">Canciones</button>
         <button mat-button [matMenuTriggerFor]="menuGeneros" *ngIf="validarRol()">Generos</button>
         <button mat-button [matMenuTriggerFor]="menuTemperamentos" *ngIf="validarRol()">Temperamentos</button>
+        <button mat-button [matMenuTriggerFor]="menuPlaylistdeusuarios" *ngIf="validarRol()">Playlists de Usuario</button>
         <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 
     </mat-toolbar>
@@ -29,6 +30,10 @@
     <mat-menu #menuTemperamentos="matMenu">
       <button mat-menu-item routerLink="/components/tempers/nuevo">Registrar</button>
       <button mat-menu-item routerLink="/components/tempers">Listar</button>
+  </mat-menu>
+  <mat-menu #menuPlaylistdeusuarios="matMenu">
+    <button mat-menu-item routerLink="components/playlistinusers/nuevo" *ngIf="role == 'ADMIN'">Registrar Playlist de Usuario</button>
+    <button mat-menu-item routerLink="components/playlistinusers">Listar</button>
   </mat-menu>
     
     <mat-menu #menuSalir="matMenu">
