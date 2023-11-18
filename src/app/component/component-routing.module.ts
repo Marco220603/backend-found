@@ -28,7 +28,7 @@ const routes: Routes =[
         ],
     },
     {
-        path: 'artist',
+        path: 'artists',
         component:ArtistComponent,
         children:[
             {path:'nuevo',component:CreaeditaArtistComponent},

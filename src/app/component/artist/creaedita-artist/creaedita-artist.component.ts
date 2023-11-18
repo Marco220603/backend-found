@@ -33,8 +33,8 @@ ngOnInit(): void {
     this.init();
   });
   this.form = this.formBuilder.group({
-    idartist:['',],
-    nameartist:['', Validators.required],
+    idArtist:['',],
+    nameArtist:['', Validators.required],
     gender:['', Validators.required]
   });
   this.gS.list().subscribe(data=>{
@@ -44,8 +44,8 @@ ngOnInit(): void {
 
 registrar(){
   if(this.form.valid){
-    this.artist.idartist=this.form.value.idartist;
-    this.artist.nameartist = this.form.value.nameartist;
+    this.artist.idArtist=this.form.value.idArtist;
+    this.artist.nameArtist = this.form.value.nameArtist;
     this.artist.gender.idGender = this.form.value.gender
 
     if(this.edicion){
@@ -61,7 +61,7 @@ registrar(){
         })
       })
     }
-    this.router.navigate(['artists'])
+    this.router.navigate(['components/artists'])
   }else{
     this.mensaje = 'Revise los campos!!!';
   }
@@ -71,8 +71,8 @@ init(){
   if(this.edicion){
     this.aS.listId(this.id).subscribe((data)=>{
       this.form = new FormGroup({
-        idartist: new FormControl(data.idartist),
-        nameartist: new FormControl(data.nameartist),
+        idArtist: new FormControl(data.idArtist),
+        nameArtist: new FormControl(data.nameArtist),
         gender: new FormControl(data.gender.idGender)
       });
       });

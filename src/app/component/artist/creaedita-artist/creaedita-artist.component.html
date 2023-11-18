@@ -12,14 +12,14 @@
       <form [formGroup]="form" (submit)="registrar()" class="example-form">
         <mat-form-field class="example-full-width" *ngIf="edicion">
           <mat-label>Id</mat-label>
-          <input matInput placeholder="Id" formControlName="idartist" />
+          <input matInput placeholder="Id" formControlName="idArtist" />
         </mat-form-field>
         <br />
         <mat-form-field class="example-full-width">
             <mat-label>Artista</mat-label>
-            <input matInput placeholder="nameartist" formControlName="nameartist" />
+            <input matInput placeholder="nameArtist" formControlName="nameArtist" />
             <mat-error
-              *ngIf="obtenerControlCampo('nameartist')?.errors?.['required']"
+              *ngIf="obtenerControlCampo('nameArtist')?.errors?.['required']"
             >
               El nombre del Artista es obligatorio.
             </mat-error>
@@ -38,7 +38,7 @@
         </mat-form-field>
         <br />
         <button mat-raised-button color="primary">Aceptar</button>
-        <button mat-raised-button color="warn" routerLink="/components/socios">
+        <button mat-raised-button color="warn" routerLink="/components/artists">
           Cancelar
         </button>
         <p>{{ mensaje }}</p>

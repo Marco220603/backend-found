@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { Gender } from "src/app/model/gender";
 import { Temper } from "src/app/model/temper";
+import { GenderService } from "src/app/services/gender.service";
 import { TemperService } from "src/app/services/temper.service";
 
 
@@ -16,7 +17,6 @@ export class CreaeditaTemperComponent implements OnInit{
   temper:Temper = new Temper();
   description:string="";
   ListaGeneros:Gender[]=[];
-  minScore:number=0;
   mensaje: string='';
   id:number=0;
   edicion:boolean=false;
@@ -25,7 +25,8 @@ export class CreaeditaTemperComponent implements OnInit{
     private tS:TemperService,
     private router:Router,
     private formBuilder:FormBuilder,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private gS:GenderService
   ){}
 
   ngOnInit(): void {
@@ -38,9 +39,12 @@ export class CreaeditaTemperComponent implements OnInit{
         idTemper:['',],
         nameTemper:['',Validators.required],
         descriptionTemper:['',Validators.required],
-        Gender:['',Validators.required],
         minScore:['',Validators.required],
+        gender:['',Validators.required],
       });
+      this.gS.list().subscribe(data =>{
+        this.ListaGeneros = data
+      })
   }
 
   registrar(){
@@ -49,7 +53,7 @@ export class CreaeditaTemperComponent implements OnInit{
       this.temper.nameTemper=this.form.value.nameTemper;
       this.temper.descriptionTemper=this.form.value.descriptionTemper;
       this.temper.minScore=this.form.value.minScore;
-      this.temper.Gender.idGender=this.form.value.gender;
+      this.temper.gender.idGender=this.form.value.gender;
 
       if(this.edicion){
         this.tS.update(this.temper).subscribe(()=>{
@@ -84,7 +88,7 @@ export class CreaeditaTemperComponent implements OnInit{
           nameTemper:new FormControl(data.nameTemper),
           descriptionTemper:new FormControl(data.descriptionTemper),
           minScore:new FormControl(data.minScore),
-          idGender:new FormControl(data.Gender.idGender),
+          idGender:new FormControl(data.gender.idGender),
         });
       });
     }

@@ -14,8 +14,8 @@
     </mat-menu>
       
     <mat-menu #menuArtista="matMenu">
-        <button mat-menu-item routerLink="components/artist/nuevo" *ngIf="role == 'ADMIN'">Registrar Artista</button>
-        <button mat-menu-item routerLink="components/artist">Listar</button>
+        <button mat-menu-item routerLink="components/artists/nuevo" *ngIf="role == 'ADMIN'">Registrar Artista</button>
+        <button mat-menu-item routerLink="components/artists">Listar</button>
         <button mat-menu-item routerLink="/Artista/reporte">Buscar</button>
     </mat-menu>  
     <mat-menu #menuCanciones="matMenu">

@@ -13,7 +13,14 @@ import { TemperService } from 'src/app/services/temper.service';
 export class ListarTemperComponent implements OnInit{
   
   dataSource: MatTableDataSource<Temper>= new MatTableDataSource();
-  displayedColumns: string[] = ['codigo', 'temperamento','genero','accion01','accion02'];
+  displayedColumns: string[] = [
+    'codigo', 
+    'temperamento',
+    'descripcion',
+    'minScore',
+    'genero',
+    'accion01',
+    'accion02'];
   @ViewChild(MatPaginator) paginator!:MatPaginator;
   constructor(private tS:TemperService,private loginService:LoginService) {}
  ngOnInit(): void {
