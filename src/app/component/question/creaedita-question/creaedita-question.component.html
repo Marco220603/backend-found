@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <h2>Registro de Preguntas</h2>
+        <form [formGroup]="form" (submit)="registrar()" class="example-form">
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>idQuestion</mat-label>
+                <input matInput placeholder="Id" formControlName="id" />
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Pregunta</mat-label>
+                <input matInput placeholder="Pregunta" formControlName="question" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('question')?.errors?.['required']"
+                >
+                La pregunta debe ir obligatoriamente
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Alternativa 1</mat-label>
+                <input matInput placeholder="alternative1" formControlName="alternative1" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('alternative1')?.errors?.['required']"
+                >
+                La alternativa 1 es obligatoria
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Alternativa 2</mat-label>
+                <input matInput placeholder="alternative2" formControlName="alternative2" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('alternative2')?.errors?.['required']"
+                >
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Alternativa 3</mat-label>
+                <input matInput placeholder="alternative3" formControlName="alternative3" />
+                <mat-error
+                    *ngIf="obtenerControlCampo('alternative3')?.errors?.['required']"
+                >
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/components/preguntas">
+            Cancelar
+            </button>
+            <p>{{ mensaje }}</p>
+        </form>
+    </div>
+</body>
+</html>

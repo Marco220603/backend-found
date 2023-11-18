@@ -2,7 +2,7 @@ import { Subject, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Songs } from '../model/song';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const base_url = environment.base
 
@@ -15,12 +15,23 @@ export class SongsService {
 
   constructor(private http:HttpClient) { }
 
-  list() {    
-    return this.http.get<Songs[]>(this.url);
+  list() {
+    let token = sessionStorage.getItem('token');    
+    return this.http.get<Songs[]>(this.url,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
   insert(cl: Songs) {
-    return this.http.post(this.url, cl);
+    let token = sessionStorage.getItem('token');
+    return this.http.post(this.url, cl,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    })
+    
   }
   setList(listaNueva: Songs[]) {
     this.listaCambio.next(listaNueva);
@@ -29,13 +40,29 @@ export class SongsService {
     return this.listaCambio.asObservable();
   }
   listId(id: number) {
-    return this.http.get<Songs>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+    return this.http.get<Songs>(`${this.url}/${id}`,{
+      headers: new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Content-Type', 'application/json'),
+    });
+
   }
-  update(c:Songs) { 
-    return this.http.put(this.url, c);
+  update(c:Songs) {
+    let token = sessionStorage.getItem('token');
+    return this.http.put(this.url, c,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
  
   buscar(fecha: string): Observable< Songs[]> {

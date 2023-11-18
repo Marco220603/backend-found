@@ -9,6 +9,10 @@ import { ArtistComponent } from './artist/artist.component';
 import { CreaeditaArtistComponent } from './artist/creaedita-artist/creaedita-artist.component';
 import { PlaylistinuserComponent } from './playlistinuser/playlistinuser.component';
 import { CreaeditaPlaylistinuserComponent } from './playlistinuser/creaedita-playlistinuser/creaedita-playlistinuser.component';
+import { SongComponent } from './song/song.component';
+import { CreaeditaSongComponent } from './song/creaedita-song/creaedita-song.component';
+import { QuestionComponent } from './question/question.component';
+import { CreaeditaQuestionComponent } from './question/creaedita-question/creaedita-question.component';
 
 const routes: Routes =[
     {
@@ -45,6 +49,20 @@ const routes: Routes =[
     },
     {
         path:'inicio',component:InicioComponent
+    },
+    {
+        path:'canciones',component:SongComponent,
+        children:[
+            {path:'nuevo',component:CreaeditaSongComponent},
+            {path:'ediciones/:id',component:CreaeditaSongComponent}
+        ]
+    },
+    {
+        path:'preguntas',component:QuestionComponent,
+        children:[
+            {path:'nuevo',component:CreaeditaQuestionComponent},
+            {path:'ediciones/:id',component:CreaeditaQuestionComponent}
+        ]
     }
 ];
 

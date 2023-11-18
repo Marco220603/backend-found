@@ -88,7 +88,7 @@ export class CreaeditaTemperComponent implements OnInit{
           nameTemper:new FormControl(data.nameTemper),
           descriptionTemper:new FormControl(data.descriptionTemper),
           minScore:new FormControl(data.minScore),
-          idGender:new FormControl(data.gender.idGender),
+          idGender:new FormControl(data.gender),
         });
       });
     }

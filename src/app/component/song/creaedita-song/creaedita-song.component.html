@@ -11,26 +11,24 @@
   <div class="container" style="text-align: center">
     <h2>Registro de Canciones</h2>
     <form [formGroup]="form" (submit)="registrar()" class="example-form">
-
-      <mat-form-field class="example-full-width">
-        <mat-label>Canción</mat-label>
-        <input matInput placeholder="Canción" formControlName="nombre" />
-        <mat-error *ngIf="obtenerControlCampo('nombre')?.errors?.['required']">
-          El nombre de la canción es obligatorio.
-        </mat-error>
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>idCancion</mat-label>
+        <input matInput placeholder="Id" formControlName="idSong" />
       </mat-form-field>
       <br />
       <mat-form-field class="example-full-width">
-        <mat-label>Descripcion</mat-label>
-        <input matInput placeholder="Descripcion" formControlName="descripcion" />
-        <mat-error *ngIf="obtenerControlCampo('descripcion')?.errors?.['required']">
+        <mat-label>Cancion</mat-label>
+        <input matInput placeholder="Cancion" formControlName="nameSong" />
+        <mat-error
+         *ngIf="obtenerControlCampo('nameSong')?.errors?.['required']"
+         >
           La descripcion de la canción es obligatorio.
         </mat-error>
       </mat-form-field>
       <br />
-      <mat-form-field>
+      <mat-form-field class="example-full-width">
         <mat-label>Genero</mat-label>
-        <mat-select formControlName="Género">
+        <mat-select formControlName="gender">
           <mat-option *ngFor="let g of listaGeneros" [value]="g.idGender">
             {{g.nameGender}}
           </mat-option>
@@ -40,17 +38,41 @@
         </mat-error>
       </mat-form-field>
       <br />
-      <br />
       <mat-form-field class="example-full-width">
-        <mat-label>Fecha</mat-label>
-        <input matInput placeholder="Fecha" formControlName="Fecha" />
-        <mat-error *ngIf="obtenerControlCampo('Fecha')?.errors?.['required']">
-          La fecha de la canción es obligatorio.
+        <mat-label>Artista</mat-label>
+        <mat-select formControlName="artist">
+          <mat-option *ngFor="let a of listaArtistas" [value]="a.idArtist">
+            {{a.nameArtist}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="obtenerControlCampo('artist')?.errors?.['required']">
+          El artista es obligatorio de la canción es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill" class="example-full-width">
+        <input
+          matInput
+          placeholder="Ingrese fecha"
+          [matDatepicker]="picker"
+          formControlName="fechaSong"
+          [max]="maxFecha"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker ></mat-datepicker>
+        <mat-error
+          *ngIf="obtenerControlCampo('fechaSong')?.errors?.['required']"
+        >
+          La fecha es obligatorio.
         </mat-error>
       </mat-form-field>
       <br />
       <button mat-raised-button color="primary">Aceptar</button>
-      <button mat-raised-button color="warn" routerLink="/components/socios">
+      <button mat-raised-button color="warn" routerLink="/components/canciones">
         Cancelar
       </button>
       <p>{{ mensaje }}</p>
