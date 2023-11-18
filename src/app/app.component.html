@@ -5,7 +5,6 @@
         <button mat-button [matMenuTriggerFor]="menuGeneros" *ngIf="validarRol()">Generos</button>
         <button mat-button [matMenuTriggerFor]="menuTemperamentos" *ngIf="validarRol()">Temperamentos</button>
         <button mat-button [matMenuTriggerFor]="menuPlaylistdeusuarios" *ngIf="validarRol()">Playlists de Usuario</button>
-        <button mat-button [matMenuTriggerFor]="menuPreguntas" *ngIf="validarRol()">Preguntas</button>
         <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 
     </mat-toolbar>
@@ -13,19 +12,16 @@
     <mat-menu #menuInicio="matMenu">
       <button mat-menu-item routerLink="components/inicio">Inicio</button>
     </mat-menu>
-    
-    <mat-menu #menuPreguntas="matMenu">
-      <button mat-menu-item routerLink="components/preguntas/nuevo" *ngIf="role == 'ADMIN'">Registrar Pregunta</button>
-      <button mat-menu-item routerLink="components/preguntas">Listar</button>    </mat-menu>
-
+      
     <mat-menu #menuArtista="matMenu">
         <button mat-menu-item routerLink="components/artists/nuevo" *ngIf="role == 'ADMIN'">Registrar Artista</button>
         <button mat-menu-item routerLink="components/artists">Listar</button>
         <button mat-menu-item routerLink="/Artista/reporte">Buscar</button>
     </mat-menu>  
     <mat-menu #menuCanciones="matMenu">
-        <button mat-menu-item routerLink="components/canciones/nuevo" *ngIf="role == 'ADMIN'">Registrar Canciones</button>
-        <button mat-menu-item routerLink="components/canciones">Listar</button>
+        <button mat-menu-item routerLink="components/artist/nuevo" *ngIf="role == 'ADMIN'">Registrar Canciones</button>
+        <button mat-menu-item routerLink="components/artist">Listar</button>
+        <button mat-menu-item routerLink="/Artista/reporte">Buscar</button>
     </mat-menu>
     <mat-menu #menuGeneros="matMenu">
         <button mat-menu-item routerLink="components/genders/nuevo" *ngIf="role == 'ADMIN'">Registrar Genero</button>

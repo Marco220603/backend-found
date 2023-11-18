@@ -14,7 +14,7 @@ export class CreaeditaPlaylistinuserComponent implements OnInit{
   id:number=0;
   playlistinuser:Playlistinuser = new Playlistinuser();
   description:string="";
-  //idUser:number=useAnim;
+  idUser:number=0;
   mensaje: string='';
   edicion:boolean=false;
 
