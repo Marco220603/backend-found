@@ -1,0 +1,88 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('https://www.wallpaperuse.com/wallp/41-411857_m.jpg') center/cover; /* Ajusta la ruta de la imagen según tu estructura de carpetas y el tamaño de la imagen */
+  color: white; /* Ajusta el color del texto según sea necesario */
+  font-family: Arial, sans-serif; /* Ajusta la fuente según sea necesario */
+}
+
+.title-container {
+  background: url('https://img.freepik.com/foto-gratis/banda-actuando-estudio_107420-96137.jpg?w=996&t=st=1700288220~exp=1700288820~hmac=b7f8aa3ca323c0e919a157eb22473a9153ea6919a9d2d524dd8d2588c5903907') center/cover; /* Ajusta la ruta de la imagen según tu estructura de carpetas y el tamaño de la imagen */
+  padding: 60px; /* Ajusta el relleno según sea necesario */
+  text-align: center;
+  height: 100%;
+  color: white; /* Ajusta el color del texto según sea necesario */
+  
+}
+.title-container h2 {
+  font-size: 45px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+.search-container {
+  margin-left: 20px; /* Espacio entre el título y el campo de búsqueda */
+  margin-bottom: 20px; /* Espacio entre el título y el botón Nuevo */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Espaciado entre tarjetas */
+  }
+  
+  .artist-card {
+    width: 300px; /* Ancho deseado para tus tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un aspecto más elevado */
+    transition: transform 0.3s ease-in-out; /* Efecto de transición suave al pasar el ratón */
+  }
+  
+  .artist-card:hover {
+    transform: scale(1.05); /* Hace que la tarjeta sea ligeramente más grande al pasar el ratón */
+  }
+  
+  .mat-card-content {
+    padding: 16px; /* Relleno interno del contenido de la tarjeta */
+  }
+  
+  .mat-card-actions {
+    display: flex;
+    justify-content: space-between; /* Espacio uniforme entre botones en la parte inferior */
+    padding: 16px; /* Relleno interno para la sección de acciones */
+  }
+
+  body {
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mat-paginator-container {
+    margin-top: auto;
+}
+
+.red-border {
+  border: 2px solid red;
+  border-radius: 50%; /* Otra opción para un círculo con el borde */
+  padding: 5px; /* Espacio interior para el borde */
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos en ambos extremos */
+  align-items: flex-end; /* Alinea los elementos al final verticalmente */
+  padding: 13px; /* Ajusta el espacio entre las acciones y los bordes de la tarjeta según sea necesario */
+}
+
+/* Espaciador para empujar el segundo botón a la esquina derecha */
+.spacer {
+  flex-grow: 0;
+}
+
+.custom-delete-button {
+  background-color: transparent; /* Fondo transparente para que se vea el borde */
+  color: red; /* Color del texto */
+}
+  
+  /* Puedes ajustar estos estilos según tus preferencias y diseño */

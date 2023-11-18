@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 import { GenderComponent } from './gender/gender.component';
 import { ComponentRoutingModule } from './component-routing.module';
 import { ArtistComponent } from './artist/artist.component';
@@ -69,7 +70,8 @@ import { BuscarTemperComponent } from './temper/buscar-temper/buscar-temper.comp
     MatSelectModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
 })
 export class ComponentModule { }
