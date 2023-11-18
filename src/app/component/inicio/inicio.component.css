@@ -1,10 +1,9 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: url('https://www.wallpaperuse.com/wallp/41-411857_m.jpg') center/cover; /* Ajusta la ruta de la imagen según tu estructura de carpetas y el tamaño de la imagen */
-  color: white; /* Ajusta el color del texto según sea necesario */
-  font-family: Arial, sans-serif; /* Ajusta la fuente según sea necesario */
-}
+    background-color: #747272;
+    color: #ffffff;
+    font-family: sans-serif;
+    min-height: 100vh;
+  }
   
 header {
     text-align: center;
