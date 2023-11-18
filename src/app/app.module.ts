@@ -17,6 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import{MatIconModule} from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginComponent } from './component/login/login.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { LoginComponent } from './component/login/login.component';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
