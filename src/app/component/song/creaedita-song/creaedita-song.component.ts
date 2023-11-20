@@ -1,6 +1,6 @@
 import { Songs } from './../../../model/song';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Gender } from 'src/app/model/gender';
 import { GenderService } from 'src/app/services/gender.service';
@@ -17,6 +17,9 @@ export class CreaeditaSongComponent implements OnInit{
   fechaSong:string=""
   listaGeneros: Gender[] = []
   mensaje: string='';  
+  id:number=0;
+  edicion:boolean=false;
+  
 
   constructor(
     private tS:SongsService,
@@ -28,8 +31,8 @@ export class CreaeditaSongComponent implements OnInit{
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       nombre: ['', Validators.required],
-      fecha: ['', Validators.required],
       genero: ['', Validators.required],
+      
     });
     this.gS.list().subscribe(data => {
       this.listaGeneros = data
@@ -38,8 +41,7 @@ export class CreaeditaSongComponent implements OnInit{
   registrar() {
     if (this.form.valid) {
       this.Songs.nameSong = this.form.value.nombre;
-      this.Songs.idArtist = this.form.value.Artist;
-      this.Songs.idSong = this.form.value.genero;
+      this.Songs.idGender = this.form.value.genero;
       this.tS.insert(this.Songs).subscribe(data => {
         this.tS.list().subscribe(data => {
           this.tS.setList(data);
@@ -56,5 +58,15 @@ export class CreaeditaSongComponent implements OnInit{
       throw new Error(`Control no encontrado para el campo ${nombreCampo}`);
     }
     return control;
+  }
+  init(){
+    if(this.edicion){
+      this.tS.listId(this.id).subscribe((data)=>{
+        this.form = new FormGroup({
+          idSong: new FormControl(data.idSong),
+          idGender: new FormControl(data.idGender),
+        });
+      });
+    }
   }
 }
