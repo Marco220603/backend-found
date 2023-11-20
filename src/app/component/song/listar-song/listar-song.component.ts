@@ -12,7 +12,7 @@ import { SongsService } from 'src/app/services/songs.service';
 })
 export class ListarSongComponent {
   dataSource: MatTableDataSource<Songs> = new MatTableDataSource();
-  displayedColumns: string[] = ['codigo', 'nombre', 'genero', 'accion01', 'accion02'];
+  displayedColumns: string[] = ['cancion', 'genero','accion01','accion02'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private aS: SongsService, private LoginService: LoginService) { }
   ngOnInit(): void {
