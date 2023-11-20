@@ -46,6 +46,14 @@ const routes: Routes =[
     {
         path:'inicio',component:InicioComponent
     }
+    {
+        path: 'song',
+        component:SongComponent,
+        children:[
+            {path:'nuevo',component:CreaeditaSongComponent},
+            {path:'ediciones/:id',component:CreaeditaSongComponent},
+          ],
+    },
 ];
 
 @NgModule({
