@@ -9,9 +9,9 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class PlaylistinuserService {
-  private url = `${base_url}/generos`;
+  private url = `${base_url}/reproducciones`;
   private listaCambio = new Subject<Playlistinuser[]>();
-
+  
   constructor(private http: HttpClient) {}
   list() {
     let token = sessionStorage.getItem('token');
@@ -72,4 +72,5 @@ export class PlaylistinuserService {
       }
     );
   }
+
 }

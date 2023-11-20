@@ -9,6 +9,8 @@ import { ArtistComponent } from './artist/artist.component';
 import { CreaeditaArtistComponent } from './artist/creaedita-artist/creaedita-artist.component';
 import { PlaylistinuserComponent } from './playlistinuser/playlistinuser.component';
 import { CreaeditaPlaylistinuserComponent } from './playlistinuser/creaedita-playlistinuser/creaedita-playlistinuser.component';
+import { SongComponent } from './song/song.component';
+import { CreaeditaSongComponent } from './song/creaedita-song/creaedita-song.component';
 
 const routes: Routes =[
     {
@@ -45,7 +47,7 @@ const routes: Routes =[
     },
     {
         path:'inicio',component:InicioComponent
-    }
+    },
     {
         path: 'song',
         component:SongComponent,

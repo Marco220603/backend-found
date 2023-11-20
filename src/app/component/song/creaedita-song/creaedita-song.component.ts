@@ -41,7 +41,7 @@ export class CreaeditaSongComponent implements OnInit{
   registrar() {
     if (this.form.valid) {
       this.Songs.nameSong = this.form.value.nombre;
-      this.Songs.idGender = this.form.value.genero;
+      this.Songs.gender.idGender = this.form.value.genero;
       this.tS.insert(this.Songs).subscribe(data => {
         this.tS.list().subscribe(data => {
           this.tS.setList(data);
@@ -64,7 +64,7 @@ export class CreaeditaSongComponent implements OnInit{
       this.tS.listId(this.id).subscribe((data)=>{
         this.form = new FormGroup({
           idSong: new FormControl(data.idSong),
-          idGender: new FormControl(data.idGender),
+          idGender: new FormControl(data.gender.idGender),
         });
       });
     }
