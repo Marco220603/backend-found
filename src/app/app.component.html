@@ -19,9 +19,9 @@
         <button mat-menu-item routerLink="/Artista/reporte">Buscar</button>
     </mat-menu>  
     <mat-menu #menuCanciones="matMenu">
-        <button mat-menu-item routerLink="components/artist/nuevo" *ngIf="role == 'ADMIN'">Registrar Canciones</button>
-        <button mat-menu-item routerLink="components/artist">Listar</button>
-        <button mat-menu-item routerLink="/Artista/reporte">Buscar</button>
+        <button mat-menu-item routerLink="components/song/nuevo" *ngIf="role == 'ADMIN'">Registrar Canciones</button>
+        <button mat-menu-item routerLink="/components/song">Listar</button>
+        <button mat-menu-item routerLink="/song/reporte">Buscar</button>
     </mat-menu>
     <mat-menu #menuGeneros="matMenu">
         <button mat-menu-item routerLink="components/genders/nuevo" *ngIf="role == 'ADMIN'">Registrar Genero</button>
