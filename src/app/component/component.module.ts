@@ -32,6 +32,7 @@ import { CreaeditaPlaylistinuserComponent } from './playlistinuser/creaedita-pla
 import { ListarPlaylistinuserComponent } from './playlistinuser/listar-playlistinuser/listar-playlistinuser.component';
 import { BuscarPlaylistinuserComponent } from './playlistinuser/buscar-playlistinuser/buscar-playlistinuser.component';
 import { BuscarTemperComponent } from './temper/buscar-temper/buscar-temper.component';
+import { SongReporteComponent } from './song/song-reporte/song-reporte.component';
 @NgModule({
   declarations: [
     GenderComponent,
@@ -53,7 +54,8 @@ import { BuscarTemperComponent } from './temper/buscar-temper/buscar-temper.comp
     CreaeditaPlaylistinuserComponent,
     ListarPlaylistinuserComponent,
     BuscarPlaylistinuserComponent,
-    BuscarTemperComponent
+    BuscarTemperComponent,
+    SongReporteComponent
   ],
   imports: [
     CommonModule,
